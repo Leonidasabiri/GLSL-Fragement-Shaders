@@ -17,8 +17,8 @@ vec3 hedgehog(vec3 col, vec2 st, float scale, vec2 pos)
     st.y = st.y + pos.y + 0.3;
     int n = 5;
     
-    float a = atan(st.x, st.y) * sin(iTime) * 3.;
-    float r = 6. / float(n);
+    float a = atan(st.x, st.y) * sin(iTime) * PI;
+    float r = TWOPI / float(n);
     
     d = cos(floor(.5 + a / r) * r - a) * length(st);
     color = vec3(1. - smoothstep(scale, scale, d)) * col;
